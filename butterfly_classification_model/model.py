@@ -128,6 +128,8 @@ class efficientNetB3:
     def predict(self, image: np.ndarray):
         ### TODO - make sure the image is the correct size, and has
         ### the dimensions expected by the model.
+        image = preprocess_image(image)
+        result = self.model.predict(image)
 
         result = self.model.predict(image)
         ### TODO ####
