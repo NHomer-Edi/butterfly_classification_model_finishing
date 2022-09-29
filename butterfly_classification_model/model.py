@@ -118,7 +118,6 @@ def preprocess_image(image):
 
 
 class efficientNetB3:
-    ### TODO ####
     ### Add a constructor to this class that calls the function
     ### to download the model weights, load the model, and assign
     ### to self.model
@@ -126,12 +125,11 @@ class efficientNetB3:
         self.model = load_model_with_weights(url)
 
     def predict(self, image: np.ndarray):
-        ### TODO - make sure the image is the correct size, and has
+        ### make sure the image is the correct size, and has
         ### the dimensions expected by the model.
         image = preprocess_image(image)
         result = self.model.predict(image)
         
-        ### TODO ####
         ### Find the highest weight, and, using the list of CLASS_LABELS
         ### get the corresponding class name.
         class_name = CLASS_LABELS[np.argmax(result)]
