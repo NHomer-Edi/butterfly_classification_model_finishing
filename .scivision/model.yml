@@ -1,5 +1,5 @@
 name: butterfly_model
-url: https://github.com/nbarlowATI/butterfly_classification_model
+url: https://github.com/NHomer-Edi/butterfly_classification_model_finishing
 import: butterfly_classification_model
 model: efficientNetB3
 prediction_fn:
