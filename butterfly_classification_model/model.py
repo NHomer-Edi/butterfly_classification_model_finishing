@@ -5,7 +5,7 @@ from skimage.transform import resize
 import tensorflow as tf
 from tensorflow import keras
 from tensorflow.keras.models import Model
-import urllib
+import urllib.request
 # prevent annoying tensorflow warning
 
 import logging
@@ -93,7 +93,7 @@ def load_model_with_weights(url):
     ### Need to download the weights file from url, if it's not already
     ### present, and put the downloaded filename into a variable
     ### called weights_filename
-    urllib.urlretrieve("https://connectionsworkshop.blob.core.windows.net/butterflies/EfficientNetB3-butterflies-0.97.h5", "model.h5")
+    urllib.request.urlretrieve("https://connectionsworkshop.blob.core.windows.net/butterflies/EfficientNetB3-butterflies-0.97.h5", "model.h5")
     MODEL_PATH = "./model.h5"
     model = tf.keras.models.load_model(MODEL_PATH)
     return model
