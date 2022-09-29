@@ -90,7 +90,6 @@ CLASS_LABELS = ['ADONIS',
 
 
 def load_model_with_weights(url):
-    ### TODO ####
     ### Need to download the weights file from url, if it's not already
     ### present, and put the downloaded filename into a variable
     ### called weights_filename
@@ -121,8 +120,8 @@ class efficientNetB3:
     ### Add a constructor to this class that calls the function
     ### to download the model weights, load the model, and assign
     ### to self.model
-    def __init__(self, url):
-        self.model = load_model_with_weights(url)
+    def __init__(self):
+        self.model = load_model_with_weights("https://connectionsworkshop.blob.core.windows.net/butterflies/EfficientNetB3-butterflies-0.97.h5")
 
     def predict(self, image: np.ndarray):
         ### make sure the image is the correct size, and has
