@@ -130,8 +130,7 @@ class efficientNetB3:
         ### the dimensions expected by the model.
         image = preprocess_image(image)
         result = self.model.predict(image)
-
-        result = self.model.predict(image)
+        
         ### TODO ####
         ### Find the highest weight, and, using the list of CLASS_LABELS
         ### get the corresponding class name.
