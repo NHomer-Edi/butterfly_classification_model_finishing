@@ -94,7 +94,7 @@ def load_model_with_weights(url):
     ### Need to download the weights file from url, if it's not already
     ### present, and put the downloaded filename into a variable
     ### called weights_filename
-    model = tf.keras.models.load_model(weights_filename)
+    model = tf.keras.models.load_model(url)
     return model
 
 def preprocess_image(image):
@@ -110,7 +110,7 @@ def preprocess_image(image):
     -------
     image: np.ndarray, shape(None, 150, 150, 3)
     """
-    image = resize(image, (150, 150),
+    image = resize(image, (300, 300),
                    preserve_range=True,
                    anti_aliasing=True)
     image = np.expand_dims(image, 0)
@@ -122,6 +122,8 @@ class efficientNetB3:
     ### Add a constructor to this class that calls the function
     ### to download the model weights, load the model, and assign
     ### to self.model
+    def __init__(self, url):
+        self.model = load_model_with_weights(url)
 
     def predict(self, image: np.ndarray):
         ### TODO - make sure the image is the correct size, and has
@@ -131,7 +133,8 @@ class efficientNetB3:
         ### TODO ####
         ### Find the highest weight, and, using the list of CLASS_LABELS
         ### get the corresponding class name.
-        return "FIXME"
+        class_name = CLASS_LABELS[np.argmax(result)]
+        return class_name
 
 
 
