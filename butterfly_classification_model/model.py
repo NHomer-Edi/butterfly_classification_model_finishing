@@ -111,7 +111,7 @@ def preprocess_image(image):
     -------
     image: np.ndarray, shape(None, 150, 150, 3)
     """
-    image = resize(image, (300, 300),
+    image = resize(image, (150, 150),
                    preserve_range=True,
                    anti_aliasing=True)
     image = np.expand_dims(image, 0)
