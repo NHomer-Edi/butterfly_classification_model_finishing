@@ -12,8 +12,7 @@ setup(
     name="butterfly_classification_model",
     version="0.0.1",
     description="scivision plugin, using EfficientNetB3 model",
-    ### TODO
-    url="INSERT URL OF THIS REPO HERE",
+    url="https://github.com/NHomer-Edi/butterfly_classification_model_finishing",
     packages=find_packages(),
     install_requires=requirements,
     python_requires=">=3.7",
